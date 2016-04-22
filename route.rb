@@ -4,4 +4,8 @@ class TSP
     @cities = cities
   end
 
+  def get_distance(a, b)
+    
+  end
+
 end
