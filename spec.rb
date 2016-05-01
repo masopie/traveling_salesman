@@ -7,4 +7,6 @@ describe "Traveling Salesman Problem" do
     tsp = TSP.new(cities)
     expect(tsp.get_distance([0,3], [4,0])).to eq 5
   end
+
+  
 end
