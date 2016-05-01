@@ -30,6 +30,6 @@ class TSP
 
 end
 
-mr_salesmans_route = TSP.new([[0, 0], [1, 2], [3, 4], [8, 7], [10, 12], [2, 4]])
+mr_salesmans_route = TSP.new([[1, 2], [3, 4], [8, 7], [10, 12], [2, 4]])
 puts mr_salesmans_route.get_distance(mr_salesmans_route.cities[0], mr_salesmans_route.cities[1])
 puts mr_salesmans_route.get_total_distance(mr_salesmans_route.cities)
