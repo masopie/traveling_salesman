@@ -2,6 +2,7 @@ class TSP
 
   def initialize(cities)
     @cities = cities
+    @routes = cities.permutation.to_a
   end
 
   def get_distance(a, b)
@@ -9,5 +10,7 @@ class TSP
     y_diff = (a[0] - b[0]).abs
     Math.hypot(x_diff, y_diff)
   end
+
+
 
 end
