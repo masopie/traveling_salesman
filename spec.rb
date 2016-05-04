@@ -19,6 +19,6 @@ describe "Traveling Salesman Problem" do
     tsp = TSP.new(cities)
     answer_route = [[3, 4], [8, 7], [10, 12], [2, 4], [1, 2]]
 
-    expect(tsp.route == answer_route || tsp.route == answer_route.reverse).to be(true)
+    expect(tsp.find_best_route == answer_route || tsp.find_best_route == answer_route.reverse).to be(true)
   end
 end
