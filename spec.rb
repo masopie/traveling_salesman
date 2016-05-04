@@ -11,6 +11,6 @@ describe "Traveling Salesman Problem" do
   # This test will be a little annoying
   it "calculates the distance between all cities" do
     tsp = TSP.new(cities)
-    expect(tsp.get_total_distance(cities)).to be_within(0.9).of(32)
+    expect(tsp.get_total_route_distance(cities)).to be_within(0.9).of(32)
   end
 end
