@@ -13,7 +13,7 @@ class TSP
     Math.hypot(x_diff, y_diff)
   end
 
-  def get_total_route_distance(possible_route)
+  def get_total_distance(possible_route)
     counter = 1
     # total grabs distance from 0,0 to initial element
     total = get_distance([0,0], possible_route[0])
@@ -22,16 +22,23 @@ class TSP
       counter += 1
     end
     # after all distances are added, have to add distance from last index back to 0,0
-    total + get_distance([0,0], cities[-1])
+    total + get_distance([0,0], possible_route[-1])
   end
 
   def find_best_route
-    @possible_routes.min_by {|possible_route| possible_route.length}
+    @possible_routes.min_by do |route|
+      get_total_distance(route)
+    end
+  end
+
+
+  def dist
+    get_total_distance(find_best_route)
   end
 
 end
 
 mr_salesmans_route = TSP.new([[1, 2], [3, 4], [8, 7], [10, 12], [2, 4]])
 puts "finding distance between 0,0 and mr salesman's first city: " + "#{mr_salesmans_route.get_distance(mr_salesmans_route.cities[0], mr_salesmans_route.cities[1])}"
-puts "getting total initial route distance: " + "#{mr_salesmans_route.get_total_route_distance(mr_salesmans_route.cities)}"
+puts "getting total initial route distance: " + "#{mr_salesmans_route.get_total_distance(mr_salesmans_route.cities)}"
 puts "finding best route: " + "#{mr_salesmans_route.find_best_route}"
