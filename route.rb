@@ -13,7 +13,7 @@ class TSP
     Math.hypot(x_diff, y_diff)
   end
 
-  def get_total_distance(possible_route)
+  def get_total_route_distance(possible_route)
     counter = 1
     # total grabs distance from 0,0 to initial element
     total = get_distance([0,0], possible_route[0])
@@ -33,5 +33,5 @@ end
 
 mr_salesmans_route = TSP.new([[1, 2], [3, 4], [8, 7], [10, 12], [2, 4]])
 puts "finding distance between 0,0 and mr salesman's first city: " + "#{mr_salesmans_route.get_distance(mr_salesmans_route.cities[0], mr_salesmans_route.cities[1])}"
-puts "getting total initial route distance: " + "#{mr_salesmans_route.get_total_distance(mr_salesmans_route.cities)}"
+puts "getting total initial route distance: " + "#{mr_salesmans_route.get_total_route_distance(mr_salesmans_route.cities)}"
 puts "finding best route: " + "#{mr_salesmans_route.find_best_route}"
